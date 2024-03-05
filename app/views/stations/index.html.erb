@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Retrouvez toutes les gares</h1>
+
+  <% @stations.each do |station| %>
+    <h3><%= station.name %></h3>
+    <p><%= station.ville %></p>
+    <%= link_to "Plus d'infos", station_path(station), class: "btn btn-primary"%>
+  <% end %>
+
+  <%= link_to "Ajouter une nouvelle gare", new_station_path, class: "btn btn-primary" %>
+</div>

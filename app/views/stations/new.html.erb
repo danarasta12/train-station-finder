@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Ajouter une nouvelle gare</h1>
+  <%= simple_form_for(@station) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :code_uic %>
+    <%= f.input :ville %>
+    <%= f.input :departement %>
+    <%= f.submit label: "Créer une gare" %>
+  <% end %>
+</div>
