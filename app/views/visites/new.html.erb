@@ -1,0 +1,13 @@
+<h1>Visites#new</h1>
+<p>Find me in app/views/visites/new.html.erb</p>
+
+<div class="container">
+  <p><%= User.first %></p>
+  <p><%= Station.find(params[:station_id]) %></p>
+
+  <h1>Ajouter une nouvelle visite</h1>
+  <%= simple_form_for [@station, @visite] do |f| %>
+    <%= f.input :completed? %>
+    <%= f.submit "Créer une visite" %>
+  <% end %>
+</div>

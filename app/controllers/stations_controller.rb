@@ -2,6 +2,8 @@ class StationsController < ApplicationController
 
   def index
     @stations = Station.all
+    @stations_grouped_by_department = Station.all.group_by(&:departement)
+
   end
 
   def show

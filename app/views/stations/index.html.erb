@@ -1,10 +1,18 @@
 <div class="container">
   <h1>Retrouvez toutes les gares</h1>
 
-  <% @stations.each do |station| %>
-    <h3><%= station.name %></h3>
-    <p><%= station.ville %></p>
-    <%= link_to "Plus d'infos", station_path(station), class: "btn btn-primary"%>
+  <% @stations_grouped_by_department.each do |departement, stations| %>
+    <h3><%= departement %></h3>
+    <hr>
+    <% stations.each do |station| %>
+      <div class="card-index">
+        <p><%= station.name %></p>
+        <p style= "font-style: italic"><%= station.ville %></p>
+        <div class="buttons-div">
+          <%= link_to "+", new_visite_path, class: "btn btn-ghost"%>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 
   <%= link_to "Ajouter une nouvelle gare", new_station_path, class: "btn btn-primary" %>
