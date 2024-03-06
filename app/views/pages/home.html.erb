@@ -1,15 +1,5 @@
 <div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-
-  <% stationtests = ["pau", "albi", "biarritz", "serres", "montardon"] %>
-
-  <h3>Essayons d'afficher ci-dessous 4 gares françaises (via array):</p>
-  <% stationtests.each do |station| %>
-    <p><%= station %></p>
-  <% end %>
-
-  <h3>Essayons d'afficher ci-dessous les gares françaises (via CSV):</p>
-
-  <%# <% stations = CSV.parse(File.read("liste-des-gares.csv"), headers: true) %>
+  <%= link_to "Accéder à toutes les gares", stations_path, class: "btn btn-primary" %>
+  <%= link_to "Accéder à toutes mes visites", visites_path, class: "btn btn-primary" %>
+  <%= link_to "Enregistrer une nouvelle gare", new_station_path, class: "btn btn-primary" %>
 </div>

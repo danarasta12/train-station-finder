@@ -1,2 +1,7 @@
-<h1>Visites#index</h1>
-<p>Find me in app/views/visites/index.html.erb</p>
+<div class="container">
+  <h1>Toutes mes visites</h1>
+
+  <% @visites.each do |visite| %>
+    <p><%= link_to visite.station.name, station_path(visite.station) %> | <%= visite.created_at %></p>
+  <% end %>
+</div>

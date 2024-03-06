@@ -1,31 +1,41 @@
 class VisitesController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :set_station, only: %i[new create]
+
   def new
     @visite = Visite.new
   end
 
   def create
     @visite = Visite.new(visite_params)
-    @station = Station.find(params[:station_id])
     @visite.station = @station
-    @visite.user = User.first
-      if @visite.save
-        redirect_to stations_path, notice: 'Visite was successfully created.'
-      else
-        # Handle validation errors or other cases where the visite couldn't be saved
-        redirect_to stations_path, alert: 'Visite could not be created.'
-      end
+    @visite.user = current_user
+    if @visite.save
+      redirect_to stations_path, notice: 'Votre visite a bien été enregistrée ! Continuez de voyager'
+    else
+      redirect_to stations_path, alert: "La visite n'a pas été enregistrée."
+    end
   end
 
   def edit
   end
 
   def destroy
+    @visite = current_user.visites.find_by(station: @station)
+    if @visite.present?
+      @visite.destroy
+      redirect_to stations_path, notice: 'Visite supprimée.'
+    else
+      redirect_to stations_path, alert: "Vous n'avez pas encore visité cette gare."
+    end
   end
 
   def update
   end
 
   def index
+    @user = current_user
+    @visites = @user.visites
   end
 
   def show
@@ -33,7 +43,11 @@ class VisitesController < ApplicationController
 
   private
 
+  def set_station
+    @station = Station.find(params[:station_id])
+  end
+
   def visite_params
-    params.require(:visite).permit(:completed?, :station_id, :user_id)
+    params.require(:visite).permit(:completed)
   end
 end
