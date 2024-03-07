@@ -1,4 +1,4 @@
-<div class="container" data-controller="stations">
+<div class="container" data-controller="stations" data-turbo-frame="stations">
   <h1>Retrouvez toutes les gares</h1>
 
   <% @stations_grouped_by_department.each do |departement, stations| %>
@@ -21,7 +21,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="visite_popup<%= station.id %>Label">Avez-vous déjà visité <%= station.name %> à  <%= station.ville %> ?</h5>
+              <h5 class="modal-title" id="visite_popup<%= station.id %>Label">Avez-vous déjà visité <%= station.name %> à <%= station.ville %> ?</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -35,6 +35,4 @@
       </div>
     <% end %>
   <% end %>
-
-  <%= link_to "Ajouter une nouvelle gare", new_station_path, class: "btn btn-primary" %>
 </div>
