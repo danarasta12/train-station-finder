@@ -1,10 +1,16 @@
 class StationsController < ApplicationController
 
   def index
-    @stations = Station.all
-    @stations_grouped_by_department = Station.all.group_by(&:departement)
+    @stations = Station.all.order(:departement)
+    @stations_grouped_by_department = {}
+    @stations.each do |station|
+      @stations_grouped_by_department[station.departement] ||= []
+      @stations_grouped_by_department[station.departement] << station
+    end
+    if params[:query].present?
+      @stations_grouped_by_department = @stations.where("name ILIKE ?", "%#{params[:query]}%").order(:num_departement).group_by(&:departement)
+    end
     @visite = Visite.new
-
   end
 
   def show

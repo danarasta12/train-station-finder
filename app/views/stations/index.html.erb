@@ -1,10 +1,21 @@
 <div class="container" data-controller="stations" data-turbo-frame="stations">
-  <h1>Retrouvez toutes les gares</h1>
-
+  <h1>Sélectionnez vos gares</h1>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: stations_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Filtrer par gare"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
   <% @stations_grouped_by_department.each do |departement, stations| %>
     <h3><%= departement %></h3>
     <hr>
-    <% stations.each do |station| %>
+    <% stations.sort_by(&:name).each do |station| %>
       <div class="card-index">
         <% if current_user.visites.exists?(station_id: station.id) %>
           <i class="fa-regular fa-square-check"></i><p><%= station.name %></p>
@@ -16,6 +27,7 @@
           <%= link_to "+", "#", class: "btn btn-ghost", "data-bs-toggle" => "modal", "data-bs-target" => "#visite_popup#{station.id}" %>
         </div>
       </div>
+      <hr>
       <!-- Modal -->
       <div class="modal fade" id="visite_popup<%= station.id %>" tabindex="-1" aria-labelledby="visite_popup<%= station.id %>Label" aria-hidden="true">
         <div class="modal-dialog">

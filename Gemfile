@@ -75,3 +75,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# to import data faster
+gem 'activerecord-import'
+
+# pagination
+gem 'will_paginate'

@@ -4,8 +4,4 @@ class PagesController < ApplicationController
   def home
     @stations = Station.all
   end
-
-  def train_stations
-    table = CSV.parse(File.read("liste-des-gares.csv"), headers: true)
-  end
 end
