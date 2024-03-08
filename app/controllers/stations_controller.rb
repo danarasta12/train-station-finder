@@ -1,7 +1,7 @@
 class StationsController < ApplicationController
 
   def index
-    @stations = Station.all.where(voyageurs: "O").order(:departement)
+    @stations = Station.all.where(voyageurs: "O").order(:departement, :name).paginate(page: params[:page], per_page: 80)
     @stations_grouped_by_department = {}
     @stations.each do |station|
       @stations_grouped_by_department[station.departement] ||= []

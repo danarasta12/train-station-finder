@@ -47,4 +47,5 @@
       </div>
     <% end %>
   <% end %>
+  <%= will_paginate @stations, previous_label: "<i class='fa-solid fa-arrow-left'></i>", next_label: "<i class='fa-solid fa-arrow-right'></i>", inner_window: "1", outer_window: "0" %>
 </div>

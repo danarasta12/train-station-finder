@@ -1,0 +1,49 @@
+/* Style des liens de pagination */
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  justify-content: space-evenly;
+}
+
+.pagination li {
+  margin-right: 5px;
+}
+
+.pagination a {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Style du lien actif */
+.pagination .current {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* Style des liens "Précédent" et "Suivant" */
+.pagination .prev,
+.pagination .next {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Style des liens "Précédent" et "Suivant" lorsque désactivés */
+.pagination .disabled {
+  color: #ccc;
+  pointer-events: none;
+  visibility: hidden;
+}
