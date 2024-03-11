@@ -81,3 +81,6 @@ gem 'activerecord-import'
 
 # pagination
 gem 'will_paginate'
+
+## strftime ##
+gem 'strftime'

@@ -2,13 +2,40 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 .btn-ghost {
-  color: #4A4A4A;
+  color: $train-blue;
   padding: 8px 8px;
   border-radius: 50px;
   font-weight: 500;
   opacity: 0.7;
   transition: opacity 0.3s ease;
+}
+
+.card-text {
+
+}
+
+.bold-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  color: $train-blue;
+}
+
+.light-name {
+  opacity: 0.7;
+  font-size: 0.8rem;
+  margin: 0;
+  color: $train-blue;
+}
+
+.blue-h3 {
+  color: $train-blue;
+}
+
+.modal-header {
+  border-bottom: none;
 }

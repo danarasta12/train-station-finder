@@ -13,19 +13,29 @@
     </div>
   </div>
   <% @stations_grouped_by_department.each do |departement, stations| %>
-    <h3><%= departement %></h3>
+    <h3 class=blue-h3><%= departement %></h3>
     <hr>
     <% stations.sort_by(&:name).each do |station| %>
-      <div class="card-index">
+      <div class="card-index row">
         <% if current_user.visites.exists?(station_id: station.id) %>
-          <i class="fa-regular fa-square-check"></i><p><%= station.name %></p>
+          <%# <i class="fa-regular fa-square-check col-1"></i> %>
+          <div class="buttons-div col-2">
+            <%= link_to "", "#", class: "btn btn-ghost fa-regular fa-square-check col-1", "data-bs-toggle" => "modal", "data-bs-target" => "#visite_popup#{station.id}" %>
+          </div>
+          <div class="card-text col">
+            <p class="bold-name"><%= station.name %></p>
+            <p class= "light-name"><%= station.ville %></p>
+          </div>
         <% else %>
-          <p><%= station.name %></p>
-        <% end %>
-        <p style= "font-style: italic"><%= station.ville %></p>
-        <div class="buttons-div">
-          <%= link_to "+", "#", class: "btn btn-ghost", "data-bs-toggle" => "modal", "data-bs-target" => "#visite_popup#{station.id}" %>
-        </div>
+          <%# <i class="fa-regular fa-square col-1"></i> %>
+          <div class="buttons-div col-2">
+            <%= link_to "", "#", class: "btn btn-ghost fa-regular fa-square col-1", "data-bs-toggle" => "modal", "data-bs-target" => "#visite_popup#{station.id}" %>
+          </div>
+          <div class="card-text col">
+            <p class="bold-name"><%= station.name %></p>
+            <p class= "light-name"><%= station.ville %></p>
+          </div>
+          <% end %>
       </div>
       <hr>
       <!-- Modal -->
@@ -33,14 +43,11 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="visite_popup<%= station.id %>Label">Avez-vous déjà visité <%= station.name %> à <%= station.ville %> ?</h5>
+              <h5 class="modal-title" id="visite_popup<%= station.id %>Label">Avez-vous déjà visité <%= station.name %> ?</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <%= render partial: "visites/new", locals: { station: station, visite: @visite } %>
-              <%#= link_to(station) do %>
-                <%# <strong>Découvrez la gare de <%= station.name</strong> %>
-              <%# <% end %>
             </div>
           </div>
         </div>

@@ -21,12 +21,12 @@ class VisitesController < ApplicationController
   end
 
   def destroy
-    @visite = current_user.visites.find_by(station: @station)
+    @visite = current_user.visites.find(params[:id])
     if @visite.present?
       @visite.destroy
-      redirect_to stations_path, notice: 'Visite supprimée.'
+      redirect_to visites_path, notice: 'Visite supprimée.'
     else
-      redirect_to stations_path, alert: "Vous n'avez pas encore visité cette gare."
+      redirect_to visites_path, alert: "Vous n'avez pas encore visité cette gare."
     end
   end
 
@@ -35,7 +35,7 @@ class VisitesController < ApplicationController
 
   def index
     @user = current_user
-    @visites = @user.visites
+    @visites = @user.visites.paginate(page: params[:page], per_page: 80)
   end
 
   def show

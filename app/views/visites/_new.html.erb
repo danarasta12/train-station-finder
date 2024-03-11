@@ -1,11 +1,7 @@
 <%= simple_form_for [station, visite] do |f| %>
-  <% if current_user.visites.exists?(station_id: station.id) %>
-    <%= f.input :completed, as: :boolean, label: "Visité", input_html: { checked: true } %>
-  <% else %>
-    <%= f.input :completed, as: :boolean, label: "Visité?" %>
-  <% end %>
   <% if current_user.visites.exists?(station_id: station.id)%>
   <% else %>
+    <%= f.input :completed, label: false, type: "hidden" %>
     <%= f.submit "Créer une visite", class: "btn btn-primary" %>
   <% end %>
 <% end %>

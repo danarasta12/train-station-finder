@@ -1,7 +1,31 @@
 <div class="container">
   <h1>Toutes mes visites</h1>
-
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: stations_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Filtrer par gare"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
   <% @visites.each do |visite| %>
-    <p><%= link_to visite.station.name, station_path(visite.station) %> | <%= visite.created_at %></p>
+    <div class="card-index row">
+      <div class="card-text col">
+        <p class="bold-name"><%= visite.station.name %></p>
+        <p class= "light-name"><%= visite.station.ville %> | <%= visite.created_at.strftime("%d/%m/%Y") %></p>
+      </div>
+      <div class="buttons-div col-2">
+        <%= link_to station_visite_path(station_id: visite.station.id, id: visite.id),  data: { turbo_method: :delete, turbo_confirm: "Voulez-vous vraiment annuler votre visite à #{visite.station.name}?" } do %>
+          <i class="fa-regular fa-square-minus"></i>
+        <% end %>
+      </div>
+    </div>
+    <hr>
   <% end %>
+  <%= will_paginate @visites, previous_label: "<i class='fa-solid fa-arrow-left'></i>", next_label: "<i class='fa-solid fa-arrow-right'></i>", inner_window: "1", outer_window: "0" %>
 </div>
