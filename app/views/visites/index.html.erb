@@ -1,17 +1,5 @@
 <div class="container">
   <h1>Toutes mes visites</h1>
-  <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
-      <%= form_with url: stations_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Filtrer par gare"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
   <hr>
   <% @visites.each do |visite| %>
     <div class="card-index row">
