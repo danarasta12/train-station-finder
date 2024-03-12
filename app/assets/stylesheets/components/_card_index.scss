@@ -14,8 +14,8 @@
   transition: opacity 0.3s ease;
 }
 
-.card-text {
-
+.visite_completed {
+  visibility: hidden;
 }
 
 .bold-name {
@@ -34,6 +34,12 @@
 
 .blue-h3 {
   color: $train-blue;
+}
+
+.blue-h1 {
+  color: $train-blue;
+  font-weight: bold;
+  margin-top: 1rem;
 }
 
 .modal-header {

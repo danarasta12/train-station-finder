@@ -1,7 +1,8 @@
 <%= simple_form_for [station, visite] do |f| %>
   <% if current_user.visites.exists?(station_id: station.id)%>
+  <p style="text-align:center">Vous avez déjà visité la gare de <%= station.name %> ! 😃🚂</p>
   <% else %>
     <%= f.input :completed, label: false, type: "hidden" %>
-    <%= f.submit "Créer une visite", class: "btn btn-primary" %>
+    <%= f.submit "Oui 🚂", class: "btn btn-primary" %>
   <% end %>
 <% end %>

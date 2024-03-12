@@ -1,5 +1,5 @@
 <div class="container" data-controller="stations" data-turbo-frame="stations">
-  <h1>Sélectionnez vos gares</h1>
+  <h1 class="blue-h1">Sélectionnez vos gares</h1>
   <div class="row justify-content-center">
     <div class="col-sm-8 my-3">
       <%= form_with url: stations_path, method: :get, class: "d-flex" do %>
@@ -8,7 +8,7 @@
               class: "form-control",
               placeholder: "Filtrer par gare"
           %>
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <%= submit_tag "Rechercher", name: "", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
@@ -43,8 +43,12 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
+            <% if current_user.visites.exists?(station_id: station.id)%>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <% else %>
               <h5 class="modal-title" id="visite_popup<%= station.id %>Label">Avez-vous déjà visité <%= station.name %> ?</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <% end %>
             </div>
             <div class="modal-body">
               <%= render partial: "visites/new", locals: { station: station, visite: @visite } %>
