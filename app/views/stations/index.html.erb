@@ -11,6 +11,9 @@
         <%= submit_tag "Rechercher", name: "", class: "btn btn-primary" %>
       <% end %>
     </div>
+  <div class="centered-btn">
+    <%= link_to "Visualiser ma progression", visites_path, class: "grey-text-link" %>
+  </div>
   </div>
   <% @stations_grouped_by_department.each do |departement, stations| %>
     <h3 class=blue-h3><%= departement %></h3>

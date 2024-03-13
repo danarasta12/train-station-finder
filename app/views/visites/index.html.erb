@@ -1,6 +1,20 @@
 <div class="container">
   <h1 class="blue-h1">Toutes mes visites</h1>
   <hr>
+  <div class="card-stat-visites">
+    <h2 class="stat-visites-h2">VOTRE PROGRESSION</h2>
+    <div class="row">
+      <div class="col">
+        <h3 class="stat-visites-h3"><%= @percentage_visited %> %</h3>
+        <p class="stat-visites-p">du pays</p>
+      </div>
+      <div class="col">
+        <h3 class="stat-visites-h3"><%= @user.visites.count %></h3>
+        <p class="stat-visites-p">gares</p>
+      </div>
+    </div>
+  </div>
+  <hr>
   <% @visites.each do |visite| %>
     <div class="card-index row">
       <div class="card-text col">

@@ -6,7 +6,47 @@
   </div>
 </div>
 <div class="container">
-  <div class="grid-lp">
-  <h2>test</h2>
+  <div class="grid-lp row">
+    <div class="col-2 icon-grid-lp">
+    <i class="fa-solid fa-train lp-icon"></i>
+    </div>
+    <div class="col-10 text-grid-lp">
+      <h2 class="blue-h2-lp">Explorez</h2>
+      <p class="blue-p-lp">Parcourez les gares françaises : joyaux architecturaux, destinations historiques et points d'intérêt uniques.</p>
+    </div>
+  </div>
+  <div class="grid-lp row">
+    <div class="col-2 icon-grid-lp">
+      <i class="fa-solid fa-location-dot lp-icon"></i>
+    </div>
+    <div class="col-10 text-grid-lp">
+      <h2 class="blue-h2-lp">Marquez</h2>
+      <p class="blue-p-lp">Cochez les gares que vous avez déjà visitées et suivez votre progression.</p>
+    </div>
+  </div>
+  <div class="grid-lp row">
+    <div class="col-2 icon-grid-lp">
+      <i class="fa-solid fa-route lp-icon"></i>
+    </div>
+    <div class="col-10 text-grid-lp">
+      <h2 class="blue-h2-lp">Planifiez</h2>
+      <p class="blue-p-lp">Fixez-vous des objectifs de voyage en consultant les gares que vous n'avez pas encore visitées.</p>
+    </div>
+  </div>
+  <div class="grid-lp row">
+    <div class="col-2 icon-grid-lp">
+      <i class="fa-solid fa-people-group lp-icon"></i>
+    </div>
+    <div class="col-10 text-grid-lp">
+      <h2 class="blue-h2-lp">Partagez</h2>
+      <p class="blue-p-lp">Comparez votre progression avec vos amis.</p>
+    </div>
+  </div>
+  <div class="centered-btn">
+    <%= link_to "Rejoignez l'aventure", stations_path, class: "btn btn-primary" %>
   </div>
 </div>
+
+<%# <i class="fa-solid fa-compass"></i>
+<i class="fa-solid fa-route"></i>
+<i class="fa-solid fa-comments"></i> %>

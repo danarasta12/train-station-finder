@@ -1,6 +1,9 @@
 class StationsController < ApplicationController
 
   def index
+    @user = current_user
+    @visites = @user.visites.paginate(page: params[:page], per_page: 50)
+    @percentage_visited = Visite.stations_visited_percent(@user)
     @stations = Station.all.where(voyageurs: "O").order(:departement, :name).paginate(page: params[:page], per_page: 80)
     @stations_grouped_by_department = {}
     @stations.each do |station|
