@@ -1,0 +1,9 @@
+<div class="container">
+  <h1 class="blue-h1">Contact</h1>
+  <p>Un problème ? Une suggestion ? Un gentil message ? Une remarque ? On attend vos retours !</p>
+  <%= simple_form_for(@contact) do |f| %>
+    <%= f.input :mail, label: "Email" %>
+    <%= f.input :message %>
+    <%= f.submit "Envoyez", class: "btn btn-primary" %>
+  <% end %>
+</div>

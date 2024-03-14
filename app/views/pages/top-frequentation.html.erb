@@ -1,0 +1,156 @@
+<div class="container">
+  <h1 class="blue-h1">Gares les plus fréquentées de France en 2022</h1>
+  <p>En utilisant les données fournies par la SNCF concernant le nombre de voyageurs en 2022 dans les différentes gares françaises, nous vous avons préparé le top 10 des gares françaises. </p>
+  <p>Nous avons volontairement exclu les gares de voyageurs d'intérêt régional (principalement parisiennes) et nous sommes concentrés sur les gares à intérêt national.
+  La moitié du top 15 original étant concernée. </p>
+  <br>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>Rang</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Gare</p>
+      <p class= "light-name">Ville</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">Total voyageurs 2022</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>1.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Paris Gare du Nord</p>
+      <p class= "light-name">Paris</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">211 698 470</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>2.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Paris Saint-Lazare</p>
+      <p class= "light-name">Paris</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">102 910 589</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>3.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Paris Gare de Lyon</p>
+      <p class= "light-name">Paris</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">102 024 783</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>4.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Paris Montparnasse</p>
+      <p class= "light-name">Paris</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">56 862 435</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>5.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Paris Est</p>
+      <p class= "light-name">Paris</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">36 774 394</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>6.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Lyon Part Dieu</p>
+      <p class= "light-name">Lyon</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">36 558 465</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>7.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Lille Flandres</p>
+      <p class= "light-name">Lille</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">21 992 946</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>8.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Strasbourg</p>
+      <p class= "light-name">Strasbourg</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">21 446 966</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>9.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Bordeaux Saint-Jean</p>
+      <p class= "light-name">Bordeaux</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">21 353 889</p>
+    </div>
+  </div>
+  <hr>
+  <div class="card-index row">
+    <div class="buttons-div col-2">
+      <p>10.</p>
+    </div>
+    <div class="card-text col">
+      <p class="bold-name">Paris Austerlitz</p>
+      <p class= "light-name">Paris</p>
+    </div>
+    <div class="col">
+      <p class= "light-name">19 515 861</p>
+    </div>
+  </div>
+  <hr>
+  <p>Sans surprise, le classement est dominé par la capitale, et ce n'est pas en 2024 que cela devrait changer !</p>
+  <div class="centered-btn">
+    <%= link_to "Et vous, les avez-vous visitées ?", stations_path, class: "btn btn-primary" %>
+  </div>
+  <a href="https://ressources.data.sncf.com/explore/dataset/frequentation-gares/table/?disjunctive.nom_gare&disjunctive.code_postal&sort=total_voyageurs_2022">Source</a>
+</div>

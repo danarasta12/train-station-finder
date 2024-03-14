@@ -20,12 +20,14 @@
           <li class="nav-item">
             <%= link_to "Mes visites", visites_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Contact", new_contact_path, class: "nav-link" %>
+          </li>
           <li class="nav-item dropdown">
             <a href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <i class="fa-solid fa-user avatar-large"></i>
             </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%#= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Modifier mon compte",  edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
