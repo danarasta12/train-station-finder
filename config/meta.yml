@@ -1,0 +1,9 @@
+meta_product_name: "Mon Carnet de Gares"
+
+meta_title: "Mon Carnet de Gares | Le Voyage Autrement"
+
+meta_description: "Enregistrer vos voyages en train dans les différentes gares et explorez le pays."
+
+meta_image: "banner_moncarnetdegares.jpg" # should exist in `app/assets/images/`
+
+twitter_account: "@alexis_dty" # required for Twitter Cards
